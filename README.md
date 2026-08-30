@@ -30,6 +30,6 @@ Various perks for the world center. Can be added for any world in config.
 - Chests in "Spawn" cant open if BlockManipulation is toggled on.
 
 ## Contributing
-Check [here](https://github.com/cutzuu/.github/blob/main/documentation/contributing.md) for details.
+Check [here](https://github.com/mikebloc/.github/blob/main/documentation/contributing.md) for details.
 
 [All rights reserved. Mike Bloc](https://github.com/mikebloc/.github/tree/main/documentation)
