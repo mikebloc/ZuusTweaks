@@ -32,4 +32,4 @@ Various perks for the world center. Can be added for any world in config.
 ## Contributing
 Check [here](https://github.com/mikebloc/.github/blob/main/documentation/contributing.md) for details.
 
-[All rights reserved. Mike Bloc](https://github.com/mikebloc/.github/tree/main/documentation)
+[All rights reserved. Mike Bloc](https://github.com/mikebloc/.github/tree/main/documentation/legal.md)
