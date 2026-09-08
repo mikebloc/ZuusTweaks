@@ -14,7 +14,6 @@ import org.bukkit.event.entity.EntityExhaustionEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.entity.EntityTargetEvent;
 import org.bukkit.event.hanging.HangingBreakEvent;
-import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class server_spawn_stuff implements Listener
@@ -28,17 +27,16 @@ public class server_spawn_stuff implements Listener
     @EventHandler
     public void noFlow(BlockFromToEvent e)
     {
-        if (main.Global.configBlockLiquidFlow)
+        if (!main.Global.configBlockLiquidFlow) return;
+
+        Location location = e.getBlock().getLocation();
+        World world = e.getBlock().getWorld();
+        if (main.Global.spawnWorldList.contains(world.getName()))
         {
-            Location location = e.getBlock().getLocation();
-            World world = e.getBlock().getWorld();
-            if (main.Global.spawnWorldList.contains(world.getName()))
+            int cord = main.Global.configServerSpawnSize + 5;
+            if (location.getX() > -cord && location.getX() < cord)
             {
-                int cord = main.Global.configServerSpawnSize + 5;
-                if (location.getX() > -cord && location.getX() < cord)
-                {
-                    if (location.getZ() > -cord && location.getZ() < cord) e.setCancelled(true);
-                }
+                if (location.getZ() > -cord && location.getZ() < cord) e.setCancelled(true);
             }
         }
     }

@@ -20,11 +20,11 @@ public final class main extends JavaPlugin implements Listener
  {
     public void onEnable()
     {
-        saveDefaultConfig();
-        loadConfiguration();
         this.getServer().getPluginManager().registerEvents(this, this);
         this.getServer().getPluginManager().registerEvents(new features(), this);
         this.getServer().getPluginManager().registerEvents(new server_spawn_stuff(), this);
+        saveDefaultConfig();
+        loadConfiguration();
 
         (new BukkitRunnable()
         {
@@ -68,7 +68,8 @@ public final class main extends JavaPlugin implements Listener
     {
         public static boolean configDropEnderChest;
         public static boolean configInstaKillWither;
-        public static boolean configUnbreakableAnvil;
+        public static boolean configUnbreakableAnvils;
+        public static boolean configUnbreakableItems;
         public static boolean configLimitedTrees;
         public static int configAntiLavaCastHeight;
         public static int configServerSpawnSize;
@@ -89,7 +90,8 @@ public final class main extends JavaPlugin implements Listener
     {
         Global.configDropEnderChest = this.getConfig().getBoolean("DroppableEnderChest");
         Global.configInstaKillWither = this.getConfig().getBoolean("InstaKillWither");
-        Global.configUnbreakableAnvil = this.getConfig().getBoolean("UnbreakableAnvils");
+        Global.configUnbreakableAnvils = this.getConfig().getBoolean("UnbreakableAnvils");
+        Global.configUnbreakableItems = this.getConfig().getBoolean("UnbreakableItems");
         Global.configLimitedTrees = this.getConfig().getBoolean("LimitedTrees");
         Global.configAntiLavaCastHeight = this.getConfig().getInt("AntiLavaCasting");
         // server spawn stuff

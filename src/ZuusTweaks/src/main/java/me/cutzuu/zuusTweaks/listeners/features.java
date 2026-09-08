@@ -1,6 +1,7 @@
 package me.cutzuu.zuusTweaks.listeners;
 
 import com.destroystokyo.paper.event.block.AnvilDamagedEvent;
+import io.papermc.paper.event.entity.EntityDamageItemEvent;
 import me.cutzuu.zuusTweaks.main;
 import org.bukkit.*;
 import org.bukkit.block.Block;
@@ -13,6 +14,7 @@ import org.bukkit.event.block.BlockDropItemEvent;
 import org.bukkit.event.block.BlockFromToEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.entity.ItemSpawnEvent;
+import org.bukkit.event.player.PlayerItemDamageEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
@@ -24,11 +26,25 @@ public class features implements Listener
     @EventHandler
     public void godAnvil(AnvilDamagedEvent e)
     {
-        if (main.Global.configUnbreakableAnvil)
+        if (main.Global.configUnbreakableAnvils)
         {
             e.setDamageState(AnvilDamagedEvent.DamageState.FULL);
             e.setCancelled(true);
         }
+    }
+
+    // Unbreakable Items for Players
+    @EventHandler
+    public void godItem1(PlayerItemDamageEvent e)
+    {
+        if (main.Global.configUnbreakableItems) e.setCancelled(true);
+    }
+
+    // Unbreakable Items for Creatures
+    @EventHandler
+    public void godItem2(EntityDamageItemEvent e)
+    {
+        if (main.Global.configUnbreakableItems) e.setCancelled(true);
     }
 
     // Limited Trees - Destroys any saplings dropped.
@@ -105,13 +121,5 @@ public class features implements Listener
                 world.playSound(location.toCenterLocation(),Sound.BLOCK_ENCHANTMENT_TABLE_USE, 0.6f, 1.0f);
             }
         }
-    }
-
-    // Anti-Liquid Flow at certain height
-    @EventHandler
-    public void noFlow(BlockFromToEvent e)
-    {
-        double height = e.getBlock().getY();
-        if (height > main.Global.configAntiLavaCastHeight) e.setCancelled(true);
     }
 }

@@ -9,18 +9,17 @@
 #-----------------------------------------------#
 # Toggles
 #-----------------------------------------------#
-
 DroppableEnderChest: true
 
 InstaKillWither: true
 
 UnbreakableAnvils: true
 
+# Armor, Equipment, and Tools. Players and Mobs.
+UnbreakableItems: true
+
 # Saplings do not drop at all.
 LimitedTrees: false
-
-# If you don't want, just set to 400.
-AntiLavaCasting: 70
 
 #-----------------------------------------------#
 # Server Spawn Configs
