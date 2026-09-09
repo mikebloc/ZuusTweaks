@@ -27,16 +27,17 @@ public class server_spawn_stuff implements Listener
     @EventHandler
     public void noFlow(BlockFromToEvent e)
     {
-        if (!main.Global.configBlockLiquidFlow) return;
-
-        Location location = e.getBlock().getLocation();
-        World world = e.getBlock().getWorld();
-        if (main.Global.spawnWorldList.contains(world.getName()))
+        if (main.Global.configBlockLiquidFlow)
         {
-            int cord = main.Global.configServerSpawnSize + 5;
-            if (location.getX() > -cord && location.getX() < cord)
+            Location location = e.getBlock().getLocation();
+            World world = e.getBlock().getWorld();
+            if (main.Global.spawnWorldList.contains(world.getName()))
             {
-                if (location.getZ() > -cord && location.getZ() < cord) e.setCancelled(true);
+                int cord = main.Global.configServerSpawnSize + 5;
+                if (location.getX() > -cord && location.getX() < cord)
+                {
+                    if (location.getZ() > -cord && location.getZ() < cord) e.setCancelled(true);
+                }
             }
         }
     }

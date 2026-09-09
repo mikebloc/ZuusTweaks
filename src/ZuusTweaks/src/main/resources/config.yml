@@ -1,9 +1,9 @@
 #-----------------------------------------------#
 #                   ZuusTweaks
 #
-#                    Cutzuu
+#                    MikeBloc
 #-----------------------------------------------#
-# https://github.com/cutzuu/
+# https://github.com/mikebloc/
 
 
 #-----------------------------------------------#
@@ -18,6 +18,9 @@ UnbreakableAnvils: true
 # Armor, Equipment, and Tools. Players and Mobs.
 UnbreakableItems: true
 
+# Minecarts are slightly faster.
+FasterMinecart: true
+
 # Saplings do not drop at all.
 LimitedTrees: false
 
@@ -29,7 +32,6 @@ LimitedTrees: false
 # These Worlds will have SpawnEffects at their center.
 # Works for dimensions as well!
 WorldNames:
-  - world
   - hub_oasis
   - hub_proxy2
 

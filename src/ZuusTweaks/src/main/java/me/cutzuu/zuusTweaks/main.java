@@ -70,6 +70,7 @@ public final class main extends JavaPlugin implements Listener
         public static boolean configInstaKillWither;
         public static boolean configUnbreakableAnvils;
         public static boolean configUnbreakableItems;
+        public static boolean configFasterMinecarts;
         public static boolean configLimitedTrees;
         public static int configAntiLavaCastHeight;
         public static int configServerSpawnSize;
@@ -92,6 +93,7 @@ public final class main extends JavaPlugin implements Listener
         Global.configInstaKillWither = this.getConfig().getBoolean("InstaKillWither");
         Global.configUnbreakableAnvils = this.getConfig().getBoolean("UnbreakableAnvils");
         Global.configUnbreakableItems = this.getConfig().getBoolean("UnbreakableItems");
+        Global.configFasterMinecarts = this.getConfig().getBoolean("FasterMinecart");
         Global.configLimitedTrees = this.getConfig().getBoolean("LimitedTrees");
         Global.configAntiLavaCastHeight = this.getConfig().getInt("AntiLavaCasting");
         // server spawn stuff

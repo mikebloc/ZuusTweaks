@@ -7,6 +7,7 @@ import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Minecart;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -15,6 +16,8 @@ import org.bukkit.event.block.BlockFromToEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.entity.ItemSpawnEvent;
 import org.bukkit.event.player.PlayerItemDamageEvent;
+import org.bukkit.event.vehicle.VehicleCreateEvent;
+import org.bukkit.event.vehicle.VehicleEnterEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
@@ -22,6 +25,18 @@ import java.util.List;
 
 public class features implements Listener
 {
+    @EventHandler
+    public void onMinecartSpawn(VehicleCreateEvent e)
+    {
+        if (main.Global.configFasterMinecarts && e.getVehicle() instanceof Minecart cart) cart.setMaxSpeed(1.0);
+    }
+
+    @EventHandler
+    public void onMinecartEnter(VehicleEnterEvent e)
+    {
+        if (main.Global.configFasterMinecarts && e.getVehicle() instanceof Minecart cart) cart.setMaxSpeed(1.0);
+    }
+
     // Unbreakable Anvil - Auto Repair
     @EventHandler
     public void godAnvil(AnvilDamagedEvent e)
